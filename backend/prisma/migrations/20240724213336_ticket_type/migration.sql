@@ -1,0 +1,19 @@
+BEGIN TRY
+
+BEGIN TRAN;
+
+-- AlterTable
+ALTER TABLE [dbo].[Ticket] ADD [ticket_type] NVARCHAR(1000) NOT NULL CONSTRAINT [Ticket_ticket_type_df] DEFAULT 'single';
+
+COMMIT TRAN;
+
+END TRY
+BEGIN CATCH
+
+IF @@TRANCOUNT > 0
+BEGIN
+    ROLLBACK TRAN;
+END;
+THROW
+
+END CATCH

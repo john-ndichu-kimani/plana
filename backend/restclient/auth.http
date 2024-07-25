@@ -1,0 +1,28 @@
+### REGISTER | CREATE USER ACCOUNT
+POST http://localhost:3002/user/register
+Content-Type: application/json
+
+{
+  "username": "CessM",
+  "first_name":"cess",
+  "last_name":"Muiruri",
+  "email": "attendee@gmail.com",
+  "phone_number": "0113214656",
+  "password_hash": "@Cess1234567"
+ 
+}
+
+### LOGIN
+POST http://localhost:3002/auth/login 
+Content-Type: application/json
+
+{
+    "email": "mosh@yopmail.com",
+    "password_hash": "@Mosh1234567"
+}
+
+
+### Check token details
+GET http://localhost:3002/auth/check-details/
+Content-Type: application/json
+token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiZDg1MTFlZjYtZDRjYi00ZmI2LWE3ODItYThhODkwMDc4ZjkzIiwidXNlcm5hbWUiOiJzbWl0aDEyMyIsImVtYWlsIjoic21pdGhAZ21haWwuY29tIiwicm9sZSI6Im1hbmFnZXIiLCJpYXQiOjE3MjE4NTE1MTcsImV4cCI6MTcyMTg1NTExN30.Zlsc3gFs7QCsGAG84LJUh2DXFCuFqpVo-eAZgnkzU0I

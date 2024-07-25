@@ -1,0 +1,62 @@
+###CREATE EVENT
+POST http://localhost:3002/events/create
+Content-Type: application/json
+token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNWZmMzRlODgtMzBlZC00NjVjLTkyZTctMzAyZTUyNTE1M2Q5IiwidXNlcm5hbWUiOiJIYW1lZGFuaSIsImVtYWlsIjoibW9zaEB5b3BtYWlsLmNvbSIsInJvbGUiOiJtYW5hZ2VyIiwiaWF0IjoxNzIxODk5MjYyLCJleHAiOjE3MjE5MDI4NjJ9.4wUtMXSmsBGwNNnLTq_37PqNhcFr9WbbRSMhUbqsI-g
+
+   {
+  "title": "Tech Conference 2024",
+  "description": "An annual conference discussing the latest trends in technology.",
+  "date": "2024-09-20T00:00:00Z",
+  "time": "2024-09-20T09:00:00.000Z",
+  "location": "San Francisco Convention Center",
+  "created_by": "503fc952-f0f5-408f-b7a0-d83378a928a3",
+  "images":  "https://img.freepik.com/free-photo/medium-shot-man-wearing-vr-glasses_23-2149126949.jpg?t=st=1721300201~exp=1721303801~hmac=a24e7e0d6a1c7f91d8c16c30e78387ee3fbe00c5337236cc4e255293b3b7e11a&w=826"  ,
+  "capacity": 500
+ 
+}
+
+
+###FETCH ALL EVENTS
+GET http://localhost:3002/events/all
+Content-Type: application/json
+
+
+###GET SINGLE EVENT 
+GET http://localhost:3002/events/44a68ed8-a8b2-493a-8a4c-2b0c97d4350e
+Content-Type: application/json
+
+###UPDATE AN EVENT
+PUT  http://localhost:3002/events/4d23aa90-7314-48f8-a8f1-878ed1bdd335
+Content-Type: application/json
+token:  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiZDg1MTFlZjYtZDRjYi00ZmI2LWE3ODItYThhODkwMDc4ZjkzIiwidXNlcm5hbWUiOiJzbWl0aDEyMyIsImVtYWlsIjoic21pdGhAZ21haWwuY29tIiwicm9sZSI6Im1hbmFnZXIiLCJpYXQiOjE3MjE3Mjc0ODQsImV4cCI6MTcyMTczMTA4NH0.I6rp6AFnREvG4ruqhDSFwkg2lhvEwy63MOna-Af3-4k
+
+{"title": "Tech Conference 2024 Updated",
+  "description": "An annual conference discussing the latest trends in technology.",
+  "date": "2024-09-20T00:00:00.000Z",
+  "time": "2024-09-20T09:00:00.000Z",
+  "available_slots":20,
+  "location": "San Francisco Convention Center",
+  "images": "https://img.freepik.com/free-photo/medium-shot-man-wearing-vr-glasses_23-2149126949.jpg",
+  "created_by": "503fc952-f0f5-408f-b7a0-d83378a928a3",
+  "created_at": "2024-07-16T19:10:43.052Z",
+  "updated_at": "2024-07-16T19:10:43.060Z",
+  "capacity": 500}
+
+
+###DELETE AN EVENT
+
+DELETE http://localhost:3002/events/ff3fe9fb-6531-475e-9e64-b2f241dc1721
+Content-Type: application/json
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiZDg1MTFlZjYtZDRjYi00ZmI2LWE3ODItYThhODkwMDc4ZjkzIiwidXNlcm5hbWUiOiJzbWl0aDEyMyIsImVtYWlsIjoic21pdGhAZ21haWwuY29tIiwicGFzc3dvcmRfaGFzaCI6IiQyYSQwNiREYUdsNHVhVXJpQjRZaVZLUDFiY2h1R2xjLnh5LnpxRy9qYzRoN2tPRVQ5dHZUaWNlLlN2UyIsInJvbGUiOiJtYW5hZ2VyIiwiZmlyc3RfbmFtZSI6IldpbGwiLCJsYXN0X25hbWUiOiJTbWl0aCIsInBob25lX251bWJlciI6IjA3MjE4OTQ1MjMiLCJwcm9maWxlX3BpY3R1cmVfdXJsIjoiaHR0cDovL3Jlcy5jbG91ZGluYXJ5LmNvbS9kYXkwYWt2M2QvaW1hZ2UvdXBsb2FkL3YxNzIxNjAxMDk5L3hpY3Znd3RzdXlvb2ZxcG40Z3lkLmpwZyIsImlzX2RlbGV0ZWQiOmZhbHNlLCJjcmVhdGVkX2F0IjoiMjAyNC0wNy0xOFQwOTozMDoxNS43ODFaIiwidXBkYXRlZF9hdCI6IjIwMjQtMDctMjJUMTQ6MjM6NDEuMzYxWiIsImlhdCI6MTcyMTY2NTQ3NywiZXhwIjoxNzIxNjc2Mjc3fQ.2IKFAwjuFyA72RbR-PFC748w0RC7Y7Fv1eRv01S9Auc
+
+
+###APPROVE EVENT
+
+PUT http://localhost:3002/events/44a68ed8-a8b2-493a-8a4c-2b0c97d4350e/approve
+Content-Type: application/json
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMmUyMmU1ZWYtMjE2Zi00OWM3LWIwMTItMDY3NjcxZjQ1YWYyIiwidXNlcm5hbWUiOiJqb3NlQDEyIiwiZW1haWwiOiJqb3NlQGdtYWlsLmNvbSIsInJvbGUiOiJzdXBlcl9hZG1pbiIsImlhdCI6MTcyMTgwNDA3NCwiZXhwIjoxNzIxODA3Njc0fQ.uCqom7QtUJq_foOfhaV1biC7g-1akS-uTlOXTziPZi8
+
+###REJECT EVENT
+PUT http://localhost:3002/events/44a68ed8-a8b2-493a-8a4c-2b0c97d4350e/reject
+Content-Type: application/json
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMmUyMmU1ZWYtMjE2Zi00OWM3LWIwMTItMDY3NjcxZjQ1YWYyIiwidXNlcm5hbWUiOiJqb3NlQDEyIiwiZW1haWwiOiJqb3NlQGdtYWlsLmNvbSIsInJvbGUiOiJzdXBlcl9hZG1pbiIsImlhdCI6MTcyMTgwNDA3NCwiZXhwIjoxNzIxODA3Njc0fQ.uCqom7QtUJq_foOfhaV1biC7g-1akS-uTlOXTziPZi8

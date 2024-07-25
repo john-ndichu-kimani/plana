@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Purchase Confirmation</title>
+</head>
+<body>
+    <h1>Purchase Confirmation</h1>
+    <p>Dear <%= user.firstName %> <%= user.lastName %>,</p>
+    <p>Your ticket for <%= event.title %> has been successfully purchased.</p>
+    <p>Event Details:</p>
+    <ul>
+        <li>Date: <%= event.date %></li>
+        <li>Time: <%= event.time %></li>
+        <li>Location: <%= event.location %></li>
+    </ul>
+    <p>We look forward to seeing you there!</p>
+</body>
+</html>

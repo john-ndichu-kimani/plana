@@ -1,0 +1,69 @@
+###CREATE A TICKET
+POST http://localhost:3002/tickets/create
+Content-Type: application/json
+token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNWZmMzRlODgtMzBlZC00NjVjLTkyZTctMzAyZTUyNTE1M2Q5IiwidXNlcm5hbWUiOiJIYW1lZGFuaSIsImVtYWlsIjoibW9zaEB5b3BtYWlsLmNvbSIsInJvbGUiOiJtYW5hZ2VyIiwiaWF0IjoxNzIxODkxNDA4LCJleHAiOjE3MjE4OTUwMDh9.O1DCZwe3UxGLXqTL8Z2aTS61OHErI1Mf45ZkVE6cYVE
+
+{
+  "event_id": "3f7d22ea-d667-4f8a-b4df-7e335a1517d1",   
+  "user_id":"5ff34e88-30ed-465c-92e7-302e525153d9",
+  "price": 100.00,
+  "ticket_type": "group",
+  "group_size":"10",
+  "image":"image"
+}
+
+###GET ALL TICKETS
+GET http://localhost:3002/tickets/
+Content-Type: application/json
+
+###GET A SINGLE TICKET
+GET http://localhost:3002/tickets/44a68ed8-a8b2-493a-8a4c-2b0c97d4350e
+Content-Type: application/json
+
+###GET TICKETS BY EVENT_ID
+
+GET http://localhost:3002/tickets/event/44a68ed8-a8b2-493a-8a4c-2b0c97d4350e/tickets
+Content-Type: application/json
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiZmI3ZjU4Y2QtNGRiZC00MTRiLTgwOGUtNWY4NmY4YzFkYjkzIiwidXNlcm5hbWUiOiJEYW50MTIzIiwiZW1haWwiOiJnYW1lc0B5b3BtYWlsLmNvbSIsInJvbGUiOiJhdHRlbmRlZSIsImlhdCI6MTcyMTczMDM4NiwiZXhwIjoxNzIxNzMzOTg2fQ.OUliOJYRSP1ZJy-hL6q9obJBVyCABJA0cYvYPrasuzE
+
+
+
+###UPDATE TICKET DETAILS
+PUT http://localhost:3002/tickets/db8fb46d-1fc9-4986-9c42-a4c80d9641eb
+Content-Type: application/json
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiZmI3ZjU4Y2QtNGRiZC00MTRiLTgwOGUtNWY4NmY4YzFkYjkzIiwidXNlcm5hbWUiOiJkYW50ZSIsImVtYWlsIjoiZ2FtZXNteTE3N0BnbWFpbC5jb20iLCJwYXNzd29yZF9oYXNoIjoiJDJhJDA2JDhkZlp0aDRVaTVlYnpxdGNpVzVDUGUuYTd5bW5ObEowcEJNbFFYRkZscGF3QWR5RHVTNEV5Iiwicm9sZSI6ImF0dGVuZGVlIiwiZmlyc3RfbmFtZSI6IkRhbmllbCIsImxhc3RfbmFtZSI6IktpdGhla2EiLCJwaG9uZV9udW1iZXIiOiIwMTEzMjM0NjU2IiwicHJvZmlsZV9waWN0dXJlX3VybCI6bnVsbCwiaXNfZGVsZXRlZCI6ZmFsc2UsImNyZWF0ZWRfYXQiOiIyMDI0LTA3LTE5VDExOjA1OjAxLjg0M1oiLCJ1cGRhdGVkX2F0IjoiMjAyNC0wNy0xOVQxMTowNTowMS44NDNaIiwiaWF0IjoxNzIxMzg3NDE0LCJleHAiOjE3MjEzOTgyMTR9.XlOETwmaME-u7X5nltsAncjEYhh4afAOqCRsDRtOJN8
+
+
+{
+  "event_id": "b64681c7-4280-4de2-8725-cbe9cc231d90", 
+  "user_id": "503fc952-f0f5-408f-b7a0-d83378a928a3",   
+  "booking_status": "booked",
+  "price": 92.00,
+  "ticket_type": "group",
+  "booking_date": "2024-07-17T12:00:00Z"
+}
+
+###DELETE TICKET
+DELETE http://localhost:3002/tickets/86ca3776-c488-48f6-97c7-d103f405d731
+Content-Type: application/json
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiZDg1MTFlZjYtZDRjYi00ZmI2LWE3ODItYThhODkwMDc4ZjkzIiwidXNlcm5hbWUiOiJzbWl0aDEyMyIsImVtYWlsIjoic21pdGhAZ21haWwuY29tIiwicm9sZSI6Im1hbmFnZXIiLCJpYXQiOjE3MjE3Mjc0ODQsImV4cCI6MTcyMTczMTA4NH0.I6rp6AFnREvG4ruqhDSFwkg2lhvEwy63MOna-Af3-4k
+
+
+###BOOK A TICKET
+POST http://localhost:3002/tickets/book
+Content-Type: application/json
+token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiZjlmMzlhMjktZjdhMC00OGM1LWIzODEtZmJiMTc3YzlmZDYyIiwidXNlcm5hbWUiOiJqb2hubmllIiwiZW1haWwiOiJqb2hubmRpY2h1MTA0QGdtYWlsLmNvbSIsInJvbGUiOiJhdHRlbmRlZSIsImlhdCI6MTcyMTc3MjMzNywiZXhwIjoxNzIxNzc1OTM3fQ.RPy8qrtZN_XYrbkyAbQ1XLo0VHXGu90qFSdEy8oxRuo
+
+{
+  "ticket_id":"9bc7b0af-a991-4b0c-aed1-eb9a8c4e4489"
+  }
+
+###CANCEL EVENT BOOKING
+PATCH http://localhost:3002/tickets/cancel/9bc7b0af-a991-4b0c-aed1-eb9a8c4e4489
+Content-Type: application/json
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiZjlmMzlhMjktZjdhMC00OGM1LWIzODEtZmJiMTc3YzlmZDYyIiwidXNlcm5hbWUiOiJqb2hubmllIiwiZW1haWwiOiJqb2hubmRpY2h1MTA0QGdtYWlsLmNvbSIsInJvbGUiOiJhdHRlbmRlZSIsImlhdCI6MTcyMTc3MjMzNywiZXhwIjoxNzIxNzc1OTM3fQ.RPy8qrtZN_XYrbkyAbQ1XLo0VHXGu90qFSdEy8oxRuo
+
+###GET BOOKING HISTORY
+GET http://localhost:3002/tickets/user/bookings
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiZjlmMzlhMjktZjdhMC00OGM1LWIzODEtZmJiMTc3YzlmZDYyIiwidXNlcm5hbWUiOiJqb2hubmllIiwiZW1haWwiOiJqb2hubmRpY2h1MTA0QGdtYWlsLmNvbSIsInJvbGUiOiJhdHRlbmRlZSIsImlhdCI6MTcyMTc2NTcyNiwiZXhwIjoxNzIxNzY5MzI2fQ.wDvg1KKTucyy6C6ne8H2JQd5tp3qnjL6BUxcuqns5d8
+

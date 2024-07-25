@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Manager Request</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #f4f4f4;
+    }
+    .container {
+      max-width: 600px;
+      margin: auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+      color: #333;
+    }
+    p {
+      color: #555;
+    }
+    .footer {
+      margin-top: 20px;
+      font-size: 0.9em;
+      color: #999;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>New Manager Request</h1>
+    <p>Hello Admin,</p>
+    <p>A user has requested to become a manager on the platform.</p>
+    <p><strong>Username:</strong> <%= username %></p>
+    <p><strong>Request ID:</strong> <%= request_id %></p>
+    <p>Please review and take the necessary action.</p>
+    <p>Thank you!</p>
+    <div class="footer">
+      <p>If you have any questions, please contact support.</p>
+    </div>
+  </div>
+</body>
+</html>
